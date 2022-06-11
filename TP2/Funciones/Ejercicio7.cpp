@@ -3,6 +3,13 @@
 
 using namespace std;
 
+int Conversor(int x){
+    int hora=(x/100),min=(x%100);
+    hora*=60;
+
+    return hora+min;
+}
+
 int cantMinExcedidos(int libres,int utilizados){
     int resultado;
     resultado=utilizados-libres;
@@ -17,8 +24,12 @@ float cantMontoAbonar(float abono,int excedidos,float costomin){
 }
 int main(int argc, const char** argv) {
     //Parte A//
+    int horaMin;
+    
+    cout<<"Ingrese la hora en formato HHMM: "<<endl;
+    cin>>horaMin;
 
-
+    cout<<"La hora HHMM en minutos representa: "<<Conversor(horaMin)<<endl;
 
     //Parte A//
 
@@ -40,7 +51,7 @@ int main(int argc, const char** argv) {
     montoAbonar=cantMontoAbonar(costoAbono,minExcedidos,costoPorMin);
 
     cout<<"\nMinutos excedidos: "<<minExcedidos<<endl<<endl;
-    cout<<"\nMonto en pesos a abonar: "<<montoAbonar<<endl<<endl;
+    cout<<"\nMonto en pesos a abonar: "<<" $"<<montoAbonar<<endl<<endl;
 
     //Parte B//
 
